@@ -1,0 +1,46 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Rene form example</title>
+  </head>
+  <body>
+    <section>
+      <div class="form-container">
+        <form id="myForm">
+          <h2>Enter some inaformation</h2>
+          <fieldset>
+            <legend>
+              Please fill some of the basic details about yourself.
+            </legend>
+            <div class="form-field-grid">
+              <label class="form-control">
+                <small>First Name</small>
+                <input type="text" id="name" autofocus />
+                <p class="p-name error-class"></p>
+              </label>
+              <label class="form-control">
+                <small>Last Name</small>
+                <input type="text" id="last" autofocus />
+                <p class="p-last error-class"></p>
+              </label>
+              <label class="form-control field-span">
+                <small>Phone number</small>
+                <input type="tel" id="phone" autofocus />
+                <p class="p-number error-class"></p>
+              </label>
+            </div>
+          </fieldset>
+          <button type="button" id="button" onclick="send()" disabled>
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+    <script src="index.js"></script>
+    <script src="telephone-library/intlTelInput.js"></script>
+    <script src="telephone-library/confing.js"></script>
+  </body>
+</html>
