@@ -1832,6 +1832,9 @@ legend {
   grid-column: span 2;
 }
 
+.form-field-grid .email {
+  width: 210%;
+}
 form button[type="button"] {
   margin: 70px auto 0;
   position: relative;
@@ -1904,4 +1907,8 @@ button[type="button"] {
 
 button[type="button"]:hover {
   opacity: 0.7;
+}
+
+.email {
+  width: 100%;;
 }
