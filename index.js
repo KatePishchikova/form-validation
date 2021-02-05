@@ -2,9 +2,11 @@ const Name = document.getElementById("name");
 const last = document.getElementById("last");
 const phone = document.getElementById("phone");
 const button = document.getElementById("button");
+const email = document.getElementById("email");
 const nameError = document.querySelector(".p-name");
 const lastError = document.querySelector(".p-last");
 const phoneError = document.querySelector(".p-number");
+const emailError = document.querySelector(".p-email");
 const body = document.querySelector("body");
 let readyToSubmitcounter = 0;
 
@@ -65,8 +67,26 @@ phone.addEventListener("change", (event) => {
     }
 });
 
+email.addEventListener("change", (event) =>{
+    const valid = !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(event.target.value)
+    if (event.target.value === "") {
+        emailError.innerText = "This field cannot be empty.";
+        email.style.border = "1px solid #FF3838";
+        submitNotReady();
+    } else if (valid) {
+        emailError.innerText = "You must provide a valid email";
+        email.style.border = "1px solid #FF3838";
+    }
+    else {
+        emailError.innerText = "";
+        email.style.border = "1px solid #E0E0E0";
+        submitReady();
+    }
+})
+
 function send() {
     console.log('First name : ' + Name.value);
     console.log('Last name : ' + last.value);
+    console.log('User email: ' + email.value);
     console.log('User phone number: ' + phone.value);
 }
